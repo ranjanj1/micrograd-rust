@@ -1,0 +1,35 @@
+=== 1 ===
+Create a CLAUDE.md for this repo with these rules: we are porting micrograd from Python to Rust in a new cargo crate called rs/. Never edit the Python files. The Rust code must have #![forbid(unsafe_code)]. After every change run cargo test and cargo clippy. Work in small steps and explain each design choice in one or two sentences. Python with numpy, scikit-learn and torch is at ../.venv/bin/python.
+
+=== 2 ===
+Read micrograd/engine.py, micrograd/nn.py and the training loop in demo.ipynb. Explain in plain words how it learns, then time the demo's 100 training steps with the Python version.
+
+=== 3 ===
+Before writing any Rust, write a Python script that exports golden data: the moons dataset, the initial weights, the loss and accuracy at every step, and the final weights, all to golden.json. The Rust port has to reproduce these numbers exactly.
+
+=== 4 ===
+Plan the Rust design before writing code. In Python every Value points to its children and many nodes share the same children. How should that graph look in Rust, and why? Give me the options and your pick.
+
+=== 5a ===
+Go ahead. Start with the engine (Value and its operations and backward), with unit tests for the gradients.
+
+=== 5b ===
+Now port nn.py: Neuron, Layer and MLP, with the same parameter order as Python.
+
+=== 5c ===
+Now the training loop. Load golden.json and check every step's loss against Python.
+
+=== 6 ===
+Run it in release mode. Does every step match Python? Show the worst difference.
+
+=== 7 ===
+Run clippy and fix every warning. Then show me one function before and after making it more idiomatic Rust.
+
+=== 8 ===
+Benchmark it with hyperfine against the Python version for the same 100 steps. Use --runs 3 for Python because it is slow.
+
+=== 9 ===
+Export the decision boundary on a grid after every training step as JSON so we can animate it. Then train a bigger network on 1,000 points instead of 100 and tell me how long Rust takes, and how long Python would take, estimated from its per-step time.
+
+=== 10 ===
+Count the lines of unsafe code and summarise what we built.

@@ -1,0 +1,26 @@
+params 1185 points 1000
+step 0 loss 1.0255911177647263, accuracy 47.9%  (18.43 s)
+step 1 loss 4.76720554958579, accuracy 78.0%  (35.75 s)
+step 2 loss 7.249634647695582, accuracy 50.0%  (60.50 s)
+step 3 loss 2.203336278599898, accuracy 50.0%  (48.49 s)
+step 4 loss 0.6827016931007936, accuracy 80.60000000000001%  (57.45 s)
+step 5 loss 0.3366366531684609, accuracy 86.9%  (59.94 s)
+per-step mean 46.76 s, min 18.43 s, max 60.50 s
+      315.16 real       191.84 user        74.65 sys
+          2232991744  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+            33128478  page reclaims
+                1647  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                1997  voluntary context switches
+              244382  involuntary context switches
+        580076155016  instructions retired
+        808297329037  cycles elapsed
+          4443186752  peak memory footprint

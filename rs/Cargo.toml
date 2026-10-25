@@ -1,0 +1,14 @@
+[package]
+name = "micrograd"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+# Applies to every target (lib, tests, examples), including ones added later.
+[lints.rust]
+unsafe_code = "forbid"
+
+[dev-dependencies]
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = { version = "1.0.154", features = ["float_roundtrip"] }
